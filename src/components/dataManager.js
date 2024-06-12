@@ -1,9 +1,11 @@
-// src/dataManager.js
+// src/components/dataManager.js
 class DataManager {
     constructor() {
         this.students = [];
         this.courses = [];
         this.teachers = [];
+        this.enrollments = [];
+        this.schedule = [];
     }
 
     // Gestion des étudiants
@@ -45,24 +47,33 @@ class DataManager {
         return this.teachers;
     }
 
-    // Associer un professeur à un cours
-    assignTeacherToCourse(courseId, teacherId) {
-        const course = this.courses.find(course => course.id === courseId);
-        if (course) {
-            course.teacherId = teacherId;
-        }
+    // Gestion des inscriptions
+    enrollStudentToCourse(enrollment) {
+        this.enrollments.push(enrollment);
     }
 
-    // Afficher le planning des cours
-    getSchedule() {
-        return this.courses.map(course => {
-            const teacher = this.teachers.find(teacher => teacher.id === course.teacherId);
-            return {
-                courseName: course.name,
-                teacherName: teacher ? teacher.name : "Non assigné",
-                time: course.time
-            };
+    removeEnrollment(enrollmentId) {
+        this.enrollments = this.enrollments.filter(enrollment => enrollment.id !== enrollmentId);
+    }
+
+    getEnrollments() {
+        return this.enrollments;
+    }
+
+    // Gestion du planning
+    addScheduleEntry(day, startTime, endTime, teacherName, courseName) {
+        this.schedule.push({
+            id: Date.now(),
+            day,
+            startTime,
+            endTime,
+            teacherName,
+            courseName
         });
+    }
+
+    getSchedule() {
+        return this.schedule;
     }
 }
 

@@ -11,6 +11,8 @@ const DashboardComponent = () => {
                     <li><Link to="/students">Gestion des étudiants</Link></li>
                     <li><Link to="/courses">Gestion des cours</Link></li>
                     <li><Link to="/enrollments">Gestion des inscriptions</Link></li>
+                    <li><Link to="/teachers">Gestion des professeurs</Link></li>
+                    <li><Link to="/schedule">Emploi du temps</Link></li>
                 </ul>
             </nav>
         </div>
