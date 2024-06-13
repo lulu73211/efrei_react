@@ -11,14 +11,14 @@ function App() {
     return (
         <Router>
             <Routes>
-                {/* Redirection par défaut vers le tableau de bord */}
+                {}
                 <Route path="/" element={<ComposantTableauDeBord />} />
                 <Route path="/dashboard" element={<ComposantTableauDeBord />} />
-                <Route path="/students" element={<ComposantEtudiants />} />
-                <Route path="/courses" element={<ComposantCours />} />
-                <Route path="/teachers" element={<ComposantProfesseurs />} />
-                <Route path="/enrollments" element={<ComposantInscriptions />} />
-                <Route path="/schedule" element={<ComposantPlanning />} />
+                <Route path="/étudiants" element={<ComposantEtudiants />} />
+                <Route path="/cours" element={<ComposantCours />} />
+                <Route path="/professeurs" element={<ComposantProfesseurs />} />
+                <Route path="/inscriptions" element={<ComposantInscriptions />} />
+                <Route path="/calendrier" element={<ComposantPlanning />} />
             </Routes>
         </Router>
     );

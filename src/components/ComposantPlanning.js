@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import gestionnaireDeDonnees from './gestionnaireDeDonnees';
+import BoutonRetour from './BoutonRetour';
 import './ComposantPlanning.css';
 
 const joursDeLaSemaine = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
@@ -39,7 +40,7 @@ const ComposantPlanning = () => {
     };
 
     return (
-        <div>
+        <div className="container">
             <h2>Planning des cours</h2>
             {erreur && <p style={{ color: 'red' }}>{erreur}</p>}
             <div>
@@ -99,14 +100,14 @@ const ComposantPlanning = () => {
                                     gridRowEnd: `${obtenirPlageHoraire(entree.heureFin) + 1}`
                                 }}
                             >
-                                <p>{entree.nomCours}</p>
-                                <p>{entree.nomProfesseur}</p>
+                                <p>{entree.nomProfesseur} - {entree.nomCours}</p>
                                 <p>{entree.heureDebut} - {entree.heureFin}</p>
                             </div>
                         ))}
                     </div>
                 ))}
             </div>
+            <BoutonRetour />  {}
         </div>
     );
 };

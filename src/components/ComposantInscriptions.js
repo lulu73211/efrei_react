@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import gestionnaireDeDonnees from './gestionnaireDeDonnees';
+import BoutonRetour from './BoutonRetour';
+import '../index.css';
 
 const ComposantInscriptions = () => {
     const [nomEtudiant, setNomEtudiant] = useState('');
@@ -32,7 +34,7 @@ const ComposantInscriptions = () => {
     };
 
     return (
-        <div>
+        <div className="container">
             <h2>Gestion des inscriptions</h2>
             {erreur && <p style={{ color: 'red' }}>{erreur}</p>}
             <div>
@@ -60,6 +62,7 @@ const ComposantInscriptions = () => {
                     </li>
                 ))}
             </ul>
+            <BoutonRetour />  {}
         </div>
     );
 };

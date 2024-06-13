@@ -1,27 +1,21 @@
 .grille-planning {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+    gap: 10px;
 }
 
 .colonne-planning {
-    border: 1px solid #ccc;
-    padding: 5px;
-    height: calc(100vh - 100px); 
-    position: relative;
-    display: grid;
-    grid-template-rows: repeat(48, 1fr); 
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .entree-planning {
-    position: absolute;
-    width: 100%;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    padding: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 10px;
     background-color: #ffcccb;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }

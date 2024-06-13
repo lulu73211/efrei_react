@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../index.css';
 
 const ComposantTableauDeBord = () => {
     return (
-        <div>
+        <div className="container">
             <h2>Tableau de bord</h2>
             <nav>
                 <ul>
-                    <li><Link to="/students">Gestion des étudiants</Link></li>
-                    <li><Link to="/courses">Gestion des cours</Link></li>
-                    <li><Link to="/enrollments">Gestion des inscriptions</Link></li>
-                    <li><Link to="/teachers">Gestion des professeurs</Link></li>
-                    <li><Link to="/schedule">Emploi du temps</Link></li>
+                    <li><Link to="/étudiants">Gestion des étudiants</Link></li>
+                    <li><Link to="/cours">Gestion des cours</Link></li>
+                    <li><Link to="/inscriptions">Gestion des inscriptions</Link></li>
+                    <li><Link to="/professeurs">Gestion des professeurs</Link></li>
+                    <li><Link to="/calendrier">Emploi du temps</Link></li>
                 </ul>
             </nav>
         </div>

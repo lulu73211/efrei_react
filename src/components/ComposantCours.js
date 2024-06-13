@@ -1,52 +1,54 @@
 import React, { useState } from 'react';
 import gestionnaireDeDonnees from './gestionnaireDeDonnees';
+import BoutonRetour from './BoutonRetour';
+import '../index.css';
 
+// Composant pour la gestion des cours
 const ComposantCours = () => {
-    const [nomDuCours, setNomDuCours] = useState('');
-    const [horaire, setHoraire] = useState('');
+    const [nomCours, setNomCours] = useState('');
+    const [heure, setHeure] = useState('');
     const [cours, setCours] = useState(gestionnaireDeDonnees.obtenirCours());
 
-    // Fonction pour ajouter un nouveau cours
     const ajouterCours = () => {
-        if (nomDuCours && horaire) { // Vérifie que les champs ne sont pas vides
-            const nouveauCours = { id: Date.now(), name: nomDuCours, time: horaire };
+        if (nomCours && heure) {
+            const nouveauCours = { id: Date.now(), name: nomCours, time: heure };
             gestionnaireDeDonnees.ajouterCours(nouveauCours);
             setCours(gestionnaireDeDonnees.obtenirCours());
-            setNomDuCours(''); // Réinitialise le champ du nom du cours
-            setHoraire(''); // Réinitialise le champ de l'horaire
+            setNomCours('');
+            setHeure('');
         }
     };
 
-    // Fonction pour supprimer un cours existant
-    const supprimerCours = (courseId) => {
-        gestionnaireDeDonnees.supprimerCours(courseId);
+    const supprimerCours = (coursId) => {
+        gestionnaireDeDonnees.supprimerCours(coursId);
         setCours(gestionnaireDeDonnees.obtenirCours());
     };
 
     return (
-        <div>
+        <div className="container">
             <h2>Gestion des cours</h2>
             <input
                 type="text"
                 placeholder="Nom du cours"
-                value={nomDuCours}
-                onChange={(e) => setNomDuCours(e.target.value)}
+                value={nomCours}
+                onChange={(e) => setNomCours(e.target.value)}
             />
             <input
                 type="text"
                 placeholder="Horaire"
-                value={horaire}
-                onChange={(e) => setHoraire(e.target.value)}
+                value={heure}
+                onChange={(e) => setHeure(e.target.value)}
             />
             <button onClick={ajouterCours}>Ajouter cours</button>
             <ul>
-                {cours.map((course) => (
-                    <li key={course.id}>
-                        {course.name} - {course.time}
-                        <button onClick={() => supprimerCours(course.id)}>Supprimer</button>
+                {cours.map((cours) => (
+                    <li key={cours.id}>
+                        {cours.name} - {cours.time}
+                        <button onClick={() => supprimerCours(cours.id)}>Supprimer</button>
                     </li>
                 ))}
             </ul>
+            <BoutonRetour />  {}
         </div>
     );
 };

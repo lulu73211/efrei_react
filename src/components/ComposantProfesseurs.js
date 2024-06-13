@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import gestionnaireDeDonnees from './gestionnaireDeDonnees';
+import BoutonRetour from './BoutonRetour';
+import '../index.css';
 
 const ComposantProfesseurs = () => {
     const [nomProfesseur, setNomProfesseur] = useState('');
@@ -24,7 +26,7 @@ const ComposantProfesseurs = () => {
     };
 
     return (
-        <div>
+        <div className="container">
             <h2>Gestion des professeurs</h2>
             <input
                 type="text"
@@ -47,9 +49,9 @@ const ComposantProfesseurs = () => {
                     </li>
                 ))}
             </ul>
+            <BoutonRetour />  {}
         </div>
     );
 };
 
 export default ComposantProfesseurs;
-
