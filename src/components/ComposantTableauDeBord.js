@@ -1,8 +1,7 @@
-// src/components/DashboardComponent.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const DashboardComponent = () => {
+const ComposantTableauDeBord = () => {
     return (
         <div>
             <h2>Tableau de bord</h2>
@@ -19,4 +18,4 @@ const DashboardComponent = () => {
     );
 };
 
-export default DashboardComponent;
+export default ComposantTableauDeBord;

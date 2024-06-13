@@ -1,25 +1,24 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginComponent from './components/LoginComponent';
-import DashboardComponent from './components/DashboardComponent';
-import StudentComponent from './components/StudentComponent';
-import CourseComponent from './components/CourseComponent';
-import TeacherComponent from './components/TeacherComponent';
-import EnrollmentComponent from './components/EnrollmentComponent';
-import ScheduleComponent from './components/ScheduleComponent';
+import ComposantTableauDeBord from './components/ComposantTableauDeBord';
+import ComposantEtudiants from './components/ComposantEtudiants';
+import ComposantCours from './components/ComposantCours';
+import ComposantProfesseurs from './components/ComposantProfesseurs';
+import ComposantInscriptions from './components/ComposantInscriptions';
+import ComposantPlanning from './components/ComposantPlanning';
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<LoginComponent />} />
-                <Route path="/dashboard" element={<DashboardComponent />} />
-                <Route path="/students" element={<StudentComponent />} />
-                <Route path="/courses" element={<CourseComponent />} />
-                <Route path="/teachers" element={<TeacherComponent />} />
-                <Route path="/enrollments" element={<EnrollmentComponent />} />
-                <Route path="/schedule" element={<ScheduleComponent />} />
+                {/* Redirection par défaut vers le tableau de bord */}
+                <Route path="/" element={<ComposantTableauDeBord />} />
+                <Route path="/dashboard" element={<ComposantTableauDeBord />} />
+                <Route path="/students" element={<ComposantEtudiants />} />
+                <Route path="/courses" element={<ComposantCours />} />
+                <Route path="/teachers" element={<ComposantProfesseurs />} />
+                <Route path="/enrollments" element={<ComposantInscriptions />} />
+                <Route path="/schedule" element={<ComposantPlanning />} />
             </Routes>
         </Router>
     );

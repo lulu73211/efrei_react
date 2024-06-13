@@ -1,19 +1,19 @@
-.schedule-grid {
+.grille-planning {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
 }
 
-.schedule-column {
+.colonne-planning {
     border: 1px solid #ccc;
     padding: 5px;
-    height: calc(100vh - 100px); /* Adjust as needed for your layout */
+    height: calc(100vh - 100px); 
     position: relative;
     display: grid;
-    grid-template-rows: repeat(48, 1fr); /* 48 rows for 30-minute intervals */
+    grid-template-rows: repeat(48, 1fr); 
 }
 
-.schedule-entry {
+.entree-planning {
     position: absolute;
     width: 100%;
     border: 1px solid #000;
